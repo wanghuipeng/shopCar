@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+<link rel="stylesheet" type="text/css" href="http://m.youlanw.com/static/css/main.css?v=20170330"/>
+<title></title>
+<style>
+	*{-webkit-overflow-scrolling: touch;}
+  .box{width: 100%;}
+  .list-l{width: 25%;height: 100%;background-color: #f8f8f8;overflow: auto;position: fixed;z-index: 10;top: 0;left: 0;}
+  .list-l>ul>li{border-bottom: 1px solid #ddd;height: 45px;line-height: 45px;text-align: center;}
+  .list-l>ul>li.active{background-color: #fff;border-left: 3px solid #2bb7ab;}
+  .list-r{width: 75%;float: left;background-color: #fff;height: 100%;overflow: auto;padding-left: 25%;}
+  .list-r>ul>li{height: 65px;border-bottom: 1px solid #ddd;padding:15px 10px;position: relative;}
+  .list-r>ul>li img{width: 80px;height: 65px;position: absolute;left: 10px;top: 15px;}
+  .text-r li{font-size: 12px;padding-left: 90px;}
+  .text-r li:first-child{color: #333;font-size: 16px;font-weight: 700;margin-bottom: 3px;}
+  .text-r li:last-child{font-size: 14px;color: #f60;font-weight: 700;margin-top: 3px;}
+  .text-r li:last-child .add-icon{float: right;background: url(images/add.png) no-repeat;width: 20px;height: 20px;display: inline-block;background-size: 20px;-webkit-tap-highlight-color: rgba(0,0,0,.3);}
+  .fix-nav{position: fixed;z-index: 10;bottom: 0;left: 0;right: 0;background-color: #3d3d3f;height: 40px;color: #fff;}
+  .fix-nav>ul>li{float: left;position: relative;text-align: left;font-size: 14px;height: 40px;}
+  .fix-nav>ul>li:first-child{width: 20%;}
+  .fix-nav>ul>li:first-child>div{width: 35px;height: 35px;border-radius: 25px;background-color: #eee;text-align: center;position: absolute;top: -10px;left: 10px;box-shadow: 0 -0.08rem 0.053333rem 0 rgba(0,0,0,.1);will-change: transform;}
+  .fix-nav>ul>li:first-child>div .shop-car{background: url(images/car.png) no-repeat;width: 20px;height: 20px;display: inline-block;background-size: 20px;margin-top: 10px;margin-left: 3px;}
+  .fix-nav>ul>li:first-child>div span{color: #fff;background-color: red;width: 20px;border-radius: 10px;height: 12px;line-height: 12px;text-align: center;font-size: 8px;position: absolute;top: -5px;right: -4px;}
+  .fix-nav>ul>li:nth-child(2){width: 50%;}
+  .fix-nav>ul>li:nth-child(2)>p:last-child{font-size: 10px;}
+  .fix-nav>ul>li:last-child{width: 30%;text-align: center;height: 40px;background-color: #4cd964;line-height: 40px;float: right;}
+  .fly_item {width: 19px; height: 19px;position: absolute;opacity: .5;filter: alpha(opacity=50);background-color:#2bb7ab ;border-radius: 10px;}
+	#shopCart.bang {-webkit-animation: bang .5s ease-in-out;animation: bang .5s ease-in-out}
+	
+	@-webkit-keyframes bang {
+		0% {
+			-webkit-transform: scale(1);
+			transform: scale(1)
+		}
+	
+		25% {
+			-webkit-transform: scale(.8);
+			transform: scale(.8)
+		}
+	
+		50% {
+			-webkit-transform: scale(1.1);
+			transform: scale(1.1)
+		}
+	
+		75% {
+			-webkit-transform: scale(.9);
+			transform: scale(.9)
+		}
+	
+		to {
+			-webkit-transform: scale(1);
+			transform: scale(1)
+		}
+	}
+	
+	@keyframes bang {
+		0% {
+			-webkit-transform: scale(1);
+			transform: scale(1)
+		}
+	
+		25% {
+			-webkit-transform: scale(.8);
+			transform: scale(.8)
+		}
+	
+		50% {
+			-webkit-transform: scale(1.1);
+			transform: scale(1.1)
+		}
+	
+		75% {
+			-webkit-transform: scale(.9);
+			transform: scale(.9)
+		}
+	
+		to {
+			-webkit-transform: scale(1);
+			transform: scale(1)
+		}
+	}
+</style>
+</head>
+<body>
+<div class="box clearfix">
+  <div class="list-l">
+  	<ul>
+  		<li class="active">沙拉</li><li>越南米线</li><li>饭</li><li>拉面</li><li>三明治</li><li>饮料</li>
+      <li>越南米线</li><li>饭</li><li>拉面</li><li>三明治</li><li>饮料</li>
+      <li>越南米线</li><li>饭</li><li>拉面</li><li>三明治</li><li>饮料</li>
+      <li>越南米线</li><li>饭</li><li>拉面</li><li>三明治</li><li>饮料</li>
+  	</ul>
+  </div>
+  <div class="list-r">
+  	<ul>
+  		<li>
+  			<img src="http://img.youlanw.com/320//img/tmp/20150804091403298J8.png" />
+  			<ul class="text-r">
+  				<li>烤牛排</li>
+  				<li>月售6份&nbsp;好评率100%</li>
+  				<li>￥68<span class="add-icon btnCart"></span></li>
+  			</ul>
+  		</li>
+  		<li>
+  			<img src="http://img.youlanw.com/320//img/tmp/20150804091403298J8.png" />
+  			<ul class="text-r">
+  				<li>烤牛排</li>
+  				<li>月售6份&nbsp;好评率100%</li>
+  				<li>￥68<span class="add-icon btnCart"></span></li>
+  			</ul>
+  		</li>
+  		<li>
+  			<img src="http://img.youlanw.com/320//img/tmp/20150804091403298J8.png" />
+  			<ul class="text-r">
+  				<li>烤牛排</li>
+  				<li>月售6份&nbsp;好评率100%</li>
+  				<li>￥68<span class="add-icon btnCart"></span></li>
+  			</ul>
+  		</li>
+  		<li>
+  			<img src="http://img.youlanw.com/320//img/tmp/20150804091403298J8.png" />
+  			<ul class="text-r">
+  				<li>烤牛排</li>
+  				<li>月售6份&nbsp;好评率100%</li>
+  				<li>￥68<span class="add-icon btnCart"></span></li>
+  			</ul>
+  		</li>
+  		<li>
+  			<img src="http://img.youlanw.com/320//img/tmp/20150804091403298J8.png" />
+  			<ul class="text-r">
+  				<li>烤牛排</li>
+  				<li>月售6份&nbsp;好评率100%</li>
+  				<li>￥68<span class="add-icon btnCart"></span></li>
+  			</ul>
+  		</li>
+  		<li>
+  			<img src="http://img.youlanw.com/320//img/tmp/20150804091403298J8.png" />
+  			<ul class="text-r">
+  				<li>烤牛排</li>
+  				<li>月售6份&nbsp;好评率100%</li>
+  				<li>￥68<span class="add-icon btnCart"></span></li>
+  			</ul>
+  		</li>
+  		<li>
+  			<img src="http://img.youlanw.com/320//img/tmp/20150804091403298J8.png" />
+  			<ul class="text-r">
+  				<li>烤牛排</li>
+  				<li>月售6份&nbsp;好评率100%</li>
+  				<li>￥68<span class="add-icon btnCart"></span></li>
+  			</ul>
+  		</li>
+  		<li>
+  			<img src="http://img.youlanw.com/320//img/tmp/20150804091403298J8.png" />
+  			<ul class="text-r">
+  				<li>烤牛排</li>
+  				<li>月售6份&nbsp;好评率100%</li>
+  				<li>￥68<span class="add-icon btnCart"></span></li>
+  			</ul>
+  		</li>
+  		<li>
+  			<img src="http://img.youlanw.com/320//img/tmp/20150804091403298J8.png" />
+  			<ul class="text-r">
+  				<li>烤牛排</li>
+  				<li>月售6份&nbsp;好评率100%</li>
+  				<li>￥68<span class="add-icon btnCart"></span></li>
+  			</ul>
+  		</li>
+  		<li>
+  			<img src="http://img.youlanw.com/320//img/tmp/20150804091403298J8.png" />
+  			<ul class="text-r">
+  				<li>烤牛排</li>
+  				<li>月售6份&nbsp;好评率100%</li>
+  				<li>￥68<span class="add-icon btnCart"></span></li>
+  			</ul>
+  		</li>
+  		<li>
+  			<img src="http://img.youlanw.com/320//img/tmp/20150804091403298J8.png" />
+  			<ul class="text-r">
+  				<li>烤牛排</li>
+  				<li>月售6份&nbsp;好评率100%</li>
+  				<li>￥68<span class="add-icon btnCart"></span></li>
+  			</ul>
+  		</li>
+  	</ul>
+  </div>
+</div>
+
+<div class="fix-nav">
+	<ul class="clearfix">
+		<li><div id="shopCart"><i class="shop-car"></i><span></span></div></li>
+		<li>
+			<p>￥844</p><p>配送费￥5</p>
+		</li>
+		<li>去结算</li>
+	</ul>
+</div>
+<!--蓝色小球-->
+<div id="flyItem" class="fly_item"></div>
+<script src="js/zepto.min.js"></script>
+<script src="js/parabola.js"></script>
+
+<script type="text/javascript">
+// 元素以及其他一些变量
+var eleFlyElement = document.querySelector("#flyItem"), eleShopCart = document.querySelector("#shopCart");
+var numberItem = 0;
+// 抛物线运动
+var myParabola = funParabola(eleFlyElement, eleShopCart, {
+	speed: 400, //抛物线速度
+	curvature: 0.008, //控制抛物线弧度
+	complete: function() {
+		eleFlyElement.style.visibility = "hidden";
+		eleShopCart.querySelector("span").innerHTML = ++numberItem;
+    $("#shopCart").addClass("bang");
+    setTimeout(function(){
+    	  $("#shopCart").removeClass("bang");
+    },500)
+	}
+});
+// 绑定点击事件
+if (eleFlyElement && eleShopCart) {
+	[].slice.call(document.getElementsByClassName("btnCart")).forEach(function(button) {
+		button.addEventListener("click", function(event) {
+			// 滚动大小
+			var scrollLeft = document.documentElement.scrollLeft || document.body.scrollLeft || 0,
+			    scrollTop = document.documentElement.scrollTop || document.body.scrollTop || 0;
+			eleFlyElement.style.left = event.clientX + scrollLeft + "px";
+			eleFlyElement.style.top = event.clientY + scrollTop + "px";
+			eleFlyElement.style.visibility = "visible";
+			// 需要重定位
+			myParabola.position().move();			
+		});
+	});
+}
+</script>
+</body>
+</html>
