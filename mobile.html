@@ -6,9 +6,8 @@
 <link rel="stylesheet" type="text/css" href="http://m.youlanw.com/static/css/main.css?v=20170330"/>
 <title></title>
 <style>
-  *{-webkit-overflow-scrolling: touch;}
   .box{width: 100%;}
-  .list-l{width: 25%;height: 100%;background-color: #f8f8f8;overflow: auto;position: fixed;z-index: 10;top: 0;left: 0;}
+  .list-l{width: 25%;height: 100%;-webkit-overflow-scrolling: touch;background-color: #f8f8f8;overflow: auto;position: fixed;z-index: 10;top: 0;left: 0;}
   .list-l>ul>li{border-bottom: 1px solid #ddd;height: 45px;line-height: 45px;text-align: center;}
   .list-l>ul>li.active{background-color: #fff;border-left: 3px solid #2bb7ab;}
   .list-r{width: 75%;float: left;background-color: #fff;height: 100%;overflow: auto;padding-left: 25%;}
@@ -28,60 +27,59 @@
   .fix-nav>ul>li:nth-child(2)>p:last-child{font-size: 10px;}
   .fix-nav>ul>li:last-child{width: 30%;text-align: center;height: 40px;background-color: #4cd964;line-height: 40px;float: right;}
   .fly_item {width: 19px; height: 19px;position: absolute;opacity: .5;filter: alpha(opacity=50);background-color:#2bb7ab ;border-radius: 10px;}
-	#shopCart.bang {-webkit-animation: bang .5s ease-in-out;animation: bang .5s ease-in-out}
-	
+   #shopCart.bang {-webkit-animation: bang .7s ease-in-out;animation: bang .7s ease-in-out}
 	@-webkit-keyframes bang {
-		0% {
-			-webkit-transform: scale(1);
-			transform: scale(1)
-		}
-	
-		25% {
-			-webkit-transform: scale(.8);
-			transform: scale(.8)
-		}
-	
-		50% {
-			-webkit-transform: scale(1.1);
-			transform: scale(1.1)
-		}
-	
-		75% {
-			-webkit-transform: scale(.9);
-			transform: scale(.9)
-		}
-	
-		to {
-			-webkit-transform: scale(1);
-			transform: scale(1)
-		}
+	0% {
+		-webkit-transform: scale(1);
+		transform: scale(1)
 	}
-	
+
+	25% {
+		-webkit-transform: scale(.8);
+		transform: scale(.8)
+	}
+
+	50% {
+		-webkit-transform: scale(1.1);
+		transform: scale(1.1)
+	}
+
+	75% {
+		-webkit-transform: scale(.9);
+		transform: scale(.9)
+	}
+
+	to {
+		-webkit-transform: scale(1);
+		transform: scale(1)
+	}
+	}
+
 	@keyframes bang {
-		0% {
-			-webkit-transform: scale(1);
-			transform: scale(1)
-		}
-	
-		25% {
-			-webkit-transform: scale(.8);
-			transform: scale(.8)
-		}
-	
-		50% {
-			-webkit-transform: scale(1.1);
-			transform: scale(1.1)
-		}
-	
-		75% {
-			-webkit-transform: scale(.9);
-			transform: scale(.9)
-		}
-	
-		to {
-			-webkit-transform: scale(1);
-			transform: scale(1)
-		}
+	0% {
+		-webkit-transform: scale(1);
+		transform: scale(1)
+	}
+
+	25% {
+		-webkit-transform: scale(.8);
+		transform: scale(.8)
+	}
+
+	50% {
+		-webkit-transform: scale(1.1);
+		transform: scale(1.1)
+	}
+
+	75% {
+		-webkit-transform: scale(.9);
+		transform: scale(.9)
+	}
+
+	to {
+		-webkit-transform: scale(1);
+		transform: scale(1)
+	}
 	}
 </style>
 </head>
@@ -209,15 +207,15 @@ var eleFlyElement = document.querySelector("#flyItem"), eleShopCart = document.q
 var numberItem = 0;
 // 抛物线运动
 var myParabola = funParabola(eleFlyElement, eleShopCart, {
-	speed: 400, //抛物线速度
-	curvature: 0.008, //控制抛物线弧度
+	speed: 600, //抛物线速度
+	curvature: 0.006, //控制抛物线弧度
 	complete: function() {
 		eleFlyElement.style.visibility = "hidden";
 		eleShopCart.querySelector("span").innerHTML = ++numberItem;
     $("#shopCart").addClass("bang");
     setTimeout(function(){
     	  $("#shopCart").removeClass("bang");
-    },500)
+    },700)
 	}
 });
 // 绑定点击事件
